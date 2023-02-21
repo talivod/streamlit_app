@@ -14,7 +14,8 @@ import streamlit as st  # 🎈 data web app development
 
 
 # In[57]:
-
+import os
+st.write(os.getcwd())
 
 #import text file 
 df = pd.read_csv('C:\\Users\\tali\\Desktop\\Elad_project\\streamlit_app\\80123_Tali-11.txt', sep=',' , header=None, skiprows=[0])
