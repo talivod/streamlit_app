@@ -45,7 +45,7 @@ else:
 
 
 #import text file 
-df = pd.read_csv('C:\\Users\\tali\\Desktop\\Elad_project\\streamlit_app\\80123_Tali-11.txt', sep=',' , header=None, skiprows=[0])
+df = pd.read_csv('80123_Tali-11.txt', sep=',' , header=None, skiprows=[0])
 print(df)
 
 
