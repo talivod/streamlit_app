@@ -27,32 +27,18 @@ import os
 import streamlit as st
 
 import streamlit as st
-import pandas as pd
-from io import StringIO
 
-uploaded_file = st.file_uploader("Choose a file")
-if uploaded_file is not None:
-    # To read file as bytes:
-    bytes_data = uploaded_file.getvalue()
+uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
+for uploaded_file in uploaded_files:
+    bytes_data = uploaded_file.read()
+    st.write("filename:", uploaded_file.name)
     st.write(bytes_data)
-
-    # To convert to a string based IO:
-    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
-    st.write(stringio)
-
-    # To read file as string:
-    string_data = stringio.read()
-    st.write(string_data)
-
-    # Can be used wherever a "file-like" object is accepted:
-    dataframe = pd.read_csv(uploaded_file)
-    st.write(dataframe)
 
 # Get the current working directory
 cwd = os.getcwd()
 
 # Specify the relative path to your file from the cwd
-file_path = os.path.join(cwd, "C:/Users/tali/Desktop/Elad_project/streamlit_app/80123_Tali-11.txt'")
+#file_path = os.path.join(cwd, "C:/Users/tali/Desktop/Elad_project/streamlit_app/80123_Tali-11.txt'")
 
 
 
@@ -60,8 +46,8 @@ file_path = os.path.join(cwd, "C:/Users/tali/Desktop/Elad_project/streamlit_app/
 
 
 #import text file
-file_path = "stramlit_app/80123_Tali-11.txt"
-df = pd.read_csv(file_path, sep=',' , header=None, skiprows=[0])
+#file_path = "stramlit_app/80123_Tali-11.txt"
+df = pd.read_csv(80123_Tali-11.txt, sep=',' , header=None, skiprows=[0])
 print(df)
 
 
@@ -69,8 +55,8 @@ print(df)
 
 
 #add headers after loading the DataFrame by directly assigning values to the df.columns attribute
-file_path1 = "stramlit_app/Copy of HeadersForFileName80123.xlsx"
-df_header = pd.read_excel(file_path1, sheet_name='Sheet1')
+#file_path1 = "stramlit_app/Copy of HeadersForFileName80123.xlsx"
+df_header = pd.read_excel(Copy of HeadersForFileName80123.xlsx, sheet_name='Sheet1')
 headers = df_header.iloc[0, :].tolist()
 df.columns = headers
 print(df)
