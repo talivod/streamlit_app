@@ -44,8 +44,9 @@ else:
 # In[15]:
 
 
-#import text file 
-df = pd.read_csv('80123_Tali-11.txt', sep=',' , header=None, skiprows=[0])
+#import text file
+file_path = "stramlit_app/80123_Tali-11.txt"
+df = pd.read_csv(file_path, sep=',' , header=None, skiprows=[0])
 print(df)
 
 
@@ -53,7 +54,8 @@ print(df)
 
 
 #add headers after loading the DataFrame by directly assigning values to the df.columns attribute
-df_header = pd.read_excel('C:/Users/tali/Desktop/Elad_project/streamlit_app/Copy of HeadersForFileName80123.xlsx', sheet_name='Sheet1')
+file_path1 = "stramlit_app/Copy of HeadersForFileName80123.xlsx"
+df_header = pd.read_excel(file_path1, sheet_name='Sheet1')
 headers = df_header.iloc[0, :].tolist()
 df.columns = headers
 print(df)
