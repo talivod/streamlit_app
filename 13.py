@@ -26,19 +26,34 @@ st.write(os.getcwd())
 import os
 import streamlit as st
 
+import streamlit as st
+import pandas as pd
+from io import StringIO
+
+uploaded_file = st.file_uploader("Choose a file")
+if uploaded_file is not None:
+    # To read file as bytes:
+    bytes_data = uploaded_file.getvalue()
+    st.write(bytes_data)
+
+    # To convert to a string based IO:
+    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
+    st.write(stringio)
+
+    # To read file as string:
+    string_data = stringio.read()
+    st.write(string_data)
+
+    # Can be used wherever a "file-like" object is accepted:
+    dataframe = pd.read_csv(uploaded_file)
+    st.write(dataframe)
+
 # Get the current working directory
 cwd = os.getcwd()
 
 # Specify the relative path to your file from the cwd
 file_path = os.path.join(cwd, "C:/Users/tali/Desktop/Elad_project/streamlit_app/80123_Tali-11.txt'")
 
-# Check if the file exists before reading it
-if os.path.exists(file_path):
-    with open(file_path, "r") as f:
-        file_contents = f.read()
-    st.write(file_contents)
-else:
-    st.write("File not found!")
 
 
 # In[15]:
