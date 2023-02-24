@@ -47,7 +47,7 @@ cwd = os.getcwd()
 
 #import text file
 #file_path = "stramlit_app/80123_Tali-11.txt"
-df = pd.read_csv(80123_Tali-11.txt, sep=',' , header=None, skiprows=[0])
+df = pd.read_csv('80123_Tali-11.txt', sep=',' , header=None, skiprows=[0])
 print(df)
 
 
@@ -56,7 +56,7 @@ print(df)
 
 #add headers after loading the DataFrame by directly assigning values to the df.columns attribute
 #file_path1 = "stramlit_app/Copy of HeadersForFileName80123.xlsx"
-df_header = pd.read_excel(Copy of HeadersForFileName80123.xlsx, sheet_name='Sheet1')
+df_header = pd.read_excel('Copy of HeadersForFileName80123.xlsx', sheet_name='Sheet1')
 headers = df_header.iloc[0, :].tolist()
 df.columns = headers
 print(df)
