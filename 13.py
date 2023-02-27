@@ -27,8 +27,8 @@ print(df)
 
 
 #add headers after loading the DataFrame by directly assigning values to the df.columns attribute
-#file_path1 = "stramlit_app/Copy of HeadersForFileName80123.xlsx"
-df_header = pd.read_excel('Copy of HeadersForFileName80123.xlsx', sheet_name='Sheet1')
+URL_header = "https://github.com/talivod/streamlit_app/blob/main/Copy%20of%20HeadersForFileName80123.xlsx"
+df_header = pd.read_excel(URL_header, sheet_name='Sheet1')
 headers = df_header.iloc[0, :].tolist()
 df.columns = headers
 print(df)
