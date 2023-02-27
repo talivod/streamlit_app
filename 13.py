@@ -8,7 +8,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
 import time  # to simulate a real time data, time loop
-#import  openpyxl as xl
+import  openpyxl as xlrd
 
 import numpy as np  # np mean, np random
 import streamlit as st  # 🎈 data web app development
