@@ -12,43 +12,14 @@ import time  # to simulate a real time data, time loop
 import numpy as np  # np mean, np random
 import streamlit as st  # 🎈 data web app development
 
-
-# In[13]:
-
-
-import os
-st.write(os.getcwd())
-
-
-# In[16]:
-
-
-import os
-import streamlit as st
-
-import streamlit as st
-
-uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
-for uploaded_file in uploaded_files:
-    bytes_data = uploaded_file.read()
-    st.write("filename:", uploaded_file.name)
-    st.write(bytes_data)
-
-# Get the current working directory
-cwd = os.getcwd()
-
-# Specify the relative path to your file from the cwd
-#file_path = os.path.join(cwd, "C:/Users/tali/Desktop/Elad_project/streamlit_app/80123_Tali-11.txt'")
-
-
-
-# In[15]:
-
+url = "https://https://github.com/talivod/stramlit_app/main/80123_Tali-11.csv"
+df = pd.read_csv(url,sep=',' , header=None, skiprows=[0])
+print(df)
 
 #import text file
 #file_path = "stramlit_app/80123_Tali-11.txt"
-df = pd.read_csv('80123_Tali-11.txt', sep=',' , header=None, skiprows=[0])
-print(df)
+#df = pd.read_csv('80123_Tali-11.txt', sep=',' , header=None, skiprows=[0])
+#print(df)
 
 
 # In[4]:
