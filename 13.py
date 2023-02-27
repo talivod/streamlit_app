@@ -13,7 +13,7 @@ import numpy as np  # np mean, np random
 import streamlit as st  # 🎈 data web app development
 
 url = "https://github.com/talivod/streamlit_app/blob/main/80123_Tali-11.TXT"
-df = pd.read_csv(url,sep=',', header=None, skiprows=[0])
+df = pd.read_csv(url,sep='delimiter', header=None, skiprows=[0])
 print(df)
 
 #import text file
