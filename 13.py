@@ -12,7 +12,7 @@ import time  # to simulate a real time data, time loop
 import numpy as np  # np mean, np random
 import streamlit as st  # 🎈 data web app development
 
-url = "https://https://github.com/talivod/stramlit_app/main/80123_Tali-11.csv"
+url = "https://github.com/talivod/streamlit_app/blob/main/80123_Tali-11.TXT"
 df = pd.read_csv(url,sep=',' , header=None, skiprows=[0])
 print(df)
 
